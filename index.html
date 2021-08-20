@@ -1,44 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <img class="logo" src="images/logo.svg" alt="" />
+    <div class="container">
+      <div class="left">
+        <p>
+          <label for="billAmount">Bill </label>
 
-  Bill
+          <img src="images/icon-dollar.svg" alt="" />
+          <input type="number" name="" id="billAmount" min="1" />
+        </p>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+        <label>Select Tip %</label>
+        <div class="tipContainer">
+          <label>
+            <input type="radio" name="tip" value="5" id="5" />
+            <span class="percentSpan">5%</span>
+          </label>
+          <label>
+            <input type="radio" name="tip" value="10" id="10" />
+            <span class="percentSpan">10%</span>
+          </label>
+          <label>
+            <input type="radio" name="tip" value="15" id="15" />
+            <span class="percentSpan">15%</span>
+          </label>
+          <label>
+            <input type="radio" name="tip" value="20" id="20" />
+            <span class="percentSpan">20%</span>
+          </label>
+          <label>
+            <input type="radio" name="tip" value="25" id="25" />
+            <span class="percentSpan">25%</span>
+          </label>
 
-  Number of People
+          <input
+            class="custom"
+            type="number"
+            name=""
+            id="custom"
+            placeholder="Custom"
+            min="1"
+          />
+        </div>
 
-  Tip Amount
-  / person
+        <p>
+          <label for="noOfPeople">Number of People </label>
+          <!-- <div>
+            
+            <span class="error">Can't be less than 0</span>
+          </div> -->
 
-  Total
-  / person
+          <img src="images/icon-person.svg" alt="" />
+          <input type="number" name="" id="noOfPeople" min="1" />
+        </p>
+      </div>
+      <div class="right">
+        <div class="right-container">
+          <div>
+            <div class="output-container">
+              <div>
+                <p>
+                  Tip Amount
+                  <span>/ person</span>
+                </p>
+              </div>
+              <span class="output" id="tipDisplay">$0.00</span>
+            </div>
+            <div class="output-container">
+              <div>
+                <p>
+                  Total
+                  <span>/ person</span>
+                </p>
+              </div>
+              <span class="output" id="billDisplay">$0.00</span>
+            </div>
+          </div>
+          <button class="btn">Reset</button>
+        </div>
+      </div>
+    </div>
 
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://manikandan.netlify.app">Manikandan</a>.
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
