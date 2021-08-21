@@ -15,15 +15,7 @@
     <title>Frontend Mentor | Tip calculator app</title>
     <link rel="stylesheet" href="style.css" />
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    
   </head>
   <body>
     <img class="logo" src="images/logo.svg" alt="" />
@@ -38,7 +30,10 @@
           <input type="number" name="" id="billAmount" min="1" />
         </p>
 
+        <div class="errorContainer">
         <label>Select Tip %</label>
+        <span class="error " id="customError"></span>
+        </div>
         <div class="tipContainer">
           <label>
             <input type="radio" name="tip" value="5" id="5" />

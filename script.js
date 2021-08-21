@@ -7,6 +7,7 @@ var billDisplay = document.querySelector("#billDisplay");
 var radiobuttons = document.getElementsByName("tip");
 var billError = document.querySelector("#billError");
 var peopleError = document.querySelector("#peopleError");
+var customError = document.querySelector("#customError");
 for (var i = 0; i < radiobuttons.length; i++) {
   radiobuttons[i].onclick = function () {
     custom.value = "";
@@ -16,13 +17,14 @@ for (var i = 0; i < radiobuttons.length; i++) {
 billAmount.oninput = function () {
   errorHandler(billAmount, billError);
 };
-function errorHandler(amountContainer, errorContainer) {
+function errorHandler(amountContainer, errorContainer, flag) {
   if (Number(amountContainer.value) < 0) {
     errorContainer.innerHTML = "Can't be less than 0";
     amountContainer.style.boxShadow = "0px 0px 0px  2px  red";
   } else if (
     Number(amountContainer.value) === 0 &&
-    amountContainer.value === "0"
+    amountContainer.value === "0" &&
+    flag != 0
   ) {
     errorContainer.innerHTML = "Can't be  0";
     amountContainer.style.boxShadow = "0px 0px 0px  2px  red";
@@ -37,7 +39,7 @@ noOfPeople.oninput = function () {
   errorHandler(noOfPeople, peopleError);
 };
 custom.oninput = function () {
-  calculate();
+  errorHandler(custom, customError, 0);
 };
 for (let i = 0; i < percentSpans.length; i++) {
   percentSpans[i].addEventListener("click", () => {
@@ -91,10 +93,12 @@ function reset() {
   tipDisplay.innerHTML = "$0.00";
   billAmount.style.boxShadow = "0px 0px 0px  2px  var(--strong-cyan)";
   noOfPeople.style.boxShadow = "0px 0px 0px  2px  var(--strong-cyan)";
+  custom.style.boxShadow = "0px 0px 0px  2px  var(--strong-cyan)";
   for (var i = 0; i < radiobuttons.length; i++) radiobuttons[i].checked = false;
   billAmount.value = "";
   noOfPeople.value = "";
   custom.value = "";
   billError.innerHTML = "";
   peopleError.innerHTML = "";
+  customError.innerHTML = "";
 }

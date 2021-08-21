@@ -56,7 +56,7 @@ input[type="number"]:active {
 }
 .left {
   width: 50%;
-  margin: 2rem 1rem;
+  margin: 1rem;
   padding: 0.3rem;
 }
 .left label {
@@ -220,4 +220,13 @@ input[type="number"] {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: repeat(3, minmax(0, 2.8rem));
   }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding-bottom: 5px;
+}
+.attribution a {
+  color: var(--strong-cyan);
 }
