@@ -48,6 +48,7 @@ input[type="number"] {
   border-radius: 5px;
   color: inherit;
 }
+
 input[type="number"]:focus,
 input[type="number"]:active {
   outline: none;
@@ -70,18 +71,25 @@ input[type="number"]:active {
   justify-content: space-between;
 }
 .error {
+  display: inline-block;
   font-size: 0.8rem;
   color: red;
-}
-.left img {
-  position: absolute;
-  padding: 0.8rem 0.5rem;
 }
 
 .left p,
 .left div {
   margin-bottom: 1.5rem;
 }
+.errorContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.2rem !important;
+}
+.left img {
+  position: absolute;
+  padding: 0.8rem 0.5rem;
+}
+
 .left p input {
   width: 100%;
 }
@@ -151,6 +159,10 @@ input[type="radio"]:focus {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.btn:hover {
+  background-color: var(--dark-grayish-cyan-1);
+}
 .output-container {
   display: flex;
   align-items: center;
@@ -191,7 +203,7 @@ input[type="number"] {
 @media only screen and (max-width: 768px) {
   .container {
     flex-direction: column;
-    margin: 2rem;
+    margin: 0;
     padding: 2rem;
   }
   .left {

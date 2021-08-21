@@ -5,6 +5,8 @@ var noOfPeople = document.querySelector("#noOfPeople");
 var tipDisplay = document.querySelector("#tipDisplay");
 var billDisplay = document.querySelector("#billDisplay");
 var radiobuttons = document.getElementsByName("tip");
+var billError = document.querySelector("#billError");
+var peopleError = document.querySelector("#peopleError");
 for (var i = 0; i < radiobuttons.length; i++) {
   radiobuttons[i].onclick = function () {
     custom.value = "";
@@ -12,10 +14,27 @@ for (var i = 0; i < radiobuttons.length; i++) {
   };
 }
 billAmount.oninput = function () {
-  calculate();
+  errorHandler(billAmount, billError);
 };
+function errorHandler(amountContainer, errorContainer) {
+  if (Number(amountContainer.value) < 0) {
+    errorContainer.innerHTML = "Can't be less than 0";
+    amountContainer.style.boxShadow = "0px 0px 0px  2px  red";
+  } else if (
+    Number(amountContainer.value) === 0 &&
+    amountContainer.value === "0"
+  ) {
+    errorContainer.innerHTML = "Can't be  0";
+    amountContainer.style.boxShadow = "0px 0px 0px  2px  red";
+  } else {
+    errorContainer.innerHTML = "";
+    amountContainer.style.boxShadow = "0px 0px 0px  2px  var(--strong-cyan)";
+    calculate();
+  }
+}
+
 noOfPeople.oninput = function () {
-  calculate();
+  errorHandler(noOfPeople, peopleError);
 };
 custom.oninput = function () {
   calculate();
@@ -65,4 +84,17 @@ function calculate() {
     billDisplay.innerHTML = "$0.00";
     tipDisplay.innerHTML = "$0.00";
   }
+}
+
+function reset() {
+  billDisplay.innerHTML = "$0.00";
+  tipDisplay.innerHTML = "$0.00";
+  billAmount.style.boxShadow = "0px 0px 0px  2px  var(--strong-cyan)";
+  noOfPeople.style.boxShadow = "0px 0px 0px  2px  var(--strong-cyan)";
+  for (var i = 0; i < radiobuttons.length; i++) radiobuttons[i].checked = false;
+  billAmount.value = "";
+  noOfPeople.value = "";
+  custom.value = "";
+  billError.innerHTML = "";
+  peopleError.innerHTML = "";
 }

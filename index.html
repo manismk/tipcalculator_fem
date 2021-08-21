@@ -30,8 +30,10 @@
     <div class="container">
       <div class="left">
         <p>
-          <label for="billAmount">Bill </label>
-
+          <div class="errorContainer">
+            <label for="billAmount">Bill </label>
+            <span class="error " id="billError"></span>
+          </div>
           <img src="images/icon-dollar.svg" alt="" />
           <input type="number" name="" id="billAmount" min="1" />
         </p>
@@ -70,11 +72,11 @@
         </div>
 
         <p>
-          <label for="noOfPeople">Number of People </label>
-          <!-- <div>
+          <div class="errorContainer">
+            <label for="noOfPeople">Number of People </label>
             
-            <span class="error">Can't be less than 0</span>
-          </div> -->
+            <span class="error" id="peopleError"></span>
+          </div>
 
           <img src="images/icon-person.svg" alt="" />
           <input type="number" name="" id="noOfPeople" min="1" />
@@ -102,7 +104,7 @@
               <span class="output" id="billDisplay">$0.00</span>
             </div>
           </div>
-          <button class="btn">Reset</button>
+          <button class="btn" onclick='reset()'>Reset</button>
         </div>
       </div>
     </div>
