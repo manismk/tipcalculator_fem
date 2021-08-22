@@ -26,7 +26,7 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 ### Links
 
-- Solution URL: [Solution](https://www.frontendmentor.io/solutions/flexboxgrid-vanila-js-PpsQgrRY9#comment-6121376a497d89150337a2a8)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/flexboxgrid-vanila-js-PpsQgrRY9)
 - Live Site URL: [Live demo](https://tip-calculator-fem.netlify.app/)
 
 ## My process
